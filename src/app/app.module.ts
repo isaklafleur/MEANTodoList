@@ -3,18 +3,23 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+// import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 import { AppComponent } from './app.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { TodosComponent } from './components/todos/todos.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavbarComponent,
+    TodosComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    NgbModule.forRoot()
+    // NgbModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

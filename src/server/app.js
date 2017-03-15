@@ -14,20 +14,18 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(morgan('dev'));
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/test');
+mongoose.connect('mongodb://localhost:27017/meantodolist');
 var db = mongoose.connection;
 mongoose.Promise = global.Promise;
 
-/*
 // Models
-var Cat = require('./cat.model.js');
-*/
+var Cat = require('./todo.model.js');
 
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
   console.log('Connected to MongoDB');
 
-/*
+
   // APIs
   // select all
   app.get('/cats', function(req, res) {
@@ -88,6 +86,8 @@ db.once('open', function() {
   app.listen(app.get('port'), function() {
     console.log('Angular 2 Full Stack listening on port '+app.get('port'));
   });
-});
 
+/*
+});
+*/
 module.exports = app;
